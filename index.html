@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+      integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.min.css">
+      <script src="https://kit.fontawesome.com/7aabf74d3e.js" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="./assets/css/style.css">
+   <title>Movei model - using fetch promise Test</title>
+</head>
+
+<body>
+   <header class="p-4 mb-4">
+      <div class="container">
+         <div class="row">
+            <div class="col-6">
+               <a href="index.html">
+                  <img class="logo" src="./assets/images/logo.svg" alt="">
+               </a>
+            </div>
+            <div class="col-6 text-right">
+               <button class="btn btn-primary btn-large nfx-btn text-white" id="addMovieBtn">
+                  Add Movie
+               </button>
+            </div>
+         </div>
+      </div>
+   </header>
+   <div class="container">
+      <div class="row" id="movieContainer">
+         <!-- <div class="col-md-4">
+            <div class="card movieCard">
+               <figure class="m-0">
+                  <img src="" alt="">
+                  <figcaption>
+                     <h2 class="font-weight-bold"></h2>
+                     <strong>Rating: 5/5</strong>
+                     <p class="content"></p>
+                     <div>
+                        <button class="btn btn-sm nfx-btn bg-light">Edit</button>
+                        <button class="btn btn-sm nfx-btn text-white">Remove</button>
+                     </div>
+                  </figcaption>
+               </figure>
+            </div>
+         </div> -->
+      </div>
+   </div>
+   <div class="backDrop movieClose" id="backDropId">
+
+   </div>
+   <div class="movieModal" id="movieModalId">
+      <form  id="movieForm">
+         <div class="card">
+            <div class="card-header d-flex justify-content-between">
+               <h3>
+                  Add Movie Details
+               </h3>
+               <span class="movieClose"><i class="fa-solid fa-close fa-x  togglebtn"></i></span>
+            </div>
+            <div class="card-body">
+               <div class="form-group">
+                  <label for="title">Movie Title*</label>
+                  <input type="text" class="form-control" id="title" required>
+               </div>
+               <div class="form-group">
+                  <label for="imageUrl">Image Url*</label>
+                  <input type="text" class="form-control" id="imageUrl" required>
+               </div>
+               <div class="form-group">
+                  <label for="content">Content*</label>
+                  <textarea  class="form-control" id="content" required></textarea>
+               </div>
+               <div class="form-group">
+                  <label for="rating">Rating*</label>
+                  <select id="rating" class="form-control" required>
+
+                     <option value="1">1</option>
+                     <option value="2">2</option>
+                     <option value="3">3</option>
+                     <option value="4">4</option>
+                     <option value="5">5</option>
+                  </select>
+                  
+               </div>
+            </div>
+            <div class="card-footer text-right">
+               <button type="submit" id="movieSubmitBtn" class="btn btn-sm btn-outline-primary">Add Movie</button>
+               <button type="button" id="movieUpdateBtn" class="btn btn-sm btn-outline-primary d-none">Update Movie</button>
+               <button type="button" class="btn btn-sm btn-outline-danger movieClose">Cancel</button>
+            </div>
+
+         </div>
+      </form>
+
+   </div>
+
+   <div class="loader d-none" id="loader">
+         <div class="spinner-border text-primary" role="status">
+            <span class="sr-only">Loading...</span>
+         </div>
+   </div>
+
+
+
+
+
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.11.1/dist/sweetalert2.all.min.js"></script>
+   <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
+
+
+
+

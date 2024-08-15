@@ -1,0 +1,190 @@
+:root{
+	--primary-color:rgb(229,9,20);
+	--dark-color:rgb(0,0,0,0.8);
+	--white-color:#fff;
+}
+
+body{
+	position: relative;
+}
+
+body::after{
+	content:'';
+	min-height: 100vh;
+	background-image:linear-gradient(to top,
+	 rgba(0, 0, 0, 0.8) 0, 
+	 rgba(0, 0, 0, 0) 60%, 
+	 rgba(0, 0, 0, 0.8) 100%),
+	 url(../images/bg.jpg);
+	background-position: center;
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+	filter: blur(2px);
+}
+
+.logo{
+	width: 9.25rem;
+	height: 2.5rem;
+	display: block;
+}
+
+.logo img{
+	display: inline-block;
+	width: 100%;
+	object-fit: cover;
+}
+
+.btn.btn-primary.btn-large.nfx-btn{
+	background-color: var(--primary-color);
+}
+
+.btn.nfx-btn,
+.btn.nfx-btn:active,
+.btn.nfx-btn:focus,
+.btn.nfx-btn:hover{
+	background-color: var(--primary-color);
+	border-color: var(--primary-color);
+	box-shadow: none !important;
+	border: 0;
+}
+
+.btn.nfx-btn-dark,
+.btn.nfx-btn-dark:active,
+.btn.nfx-btn-dark:focus,
+.btn.nfx-btn-dark:hover{
+	background-color: var(--dark-color)!important;
+	border-color: var(--dark-color)!important;
+	box-shadow: none !important;
+	
+}
+
+.card.movieCard figure img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.card.movieCard{
+	border: 0px;
+	margin-bottom: 20px;
+}
+
+.card.movieCard figure{
+	height: 350PX;
+	position: relative;
+	transition: all .4s ease-in-out;
+}
+
+.card.movieCard figcaption{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	padding: 20px;
+	color: #fff;
+	opacity: 0;
+	transition: all .4s ease-in-out;
+	background-image:linear-gradient(
+	rgba(0.8, 0.8, 0.8, 0.8), 
+	rgba(0.5, 0.5, 0.5, 0.5) ,
+	rgba(0.8, 0.8, 0.8, 0.8) );
+
+}
+
+.card.movieCard:hover figure{
+	transform: scale(1.10);
+}
+
+.card.movieCard:hover figcaption{
+	opacity: 1;
+}
+
+.backDrop{
+	position: fixed;
+	display: none;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	/* background-color: rgba(0, 0, 0, 0.6); */
+}
+
+.movieModal{
+	position: fixed;
+	height: 300px;
+	width: 60%;
+	top: 10%;
+	left: 20%;
+	display: none;
+	background-color: #fff;
+}
+
+.backDrop.visible{
+	display: block;
+	animation: fadeIn .35s ease-in-out;
+}
+.movieModal.visible{
+	display: block;
+	animation: slideDown .5s ease-in-out;
+}
+
+.movieModal .card-header .movieClose{
+	font-size: 22px;
+}
+.movieClose{
+	cursor: pointer;
+}
+
+@keyframes fadeIn{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+	}
+}
+
+@keyframes slideDown{
+	from{
+		margin-top: -80px;
+		opacity: 0;
+	}
+	to{
+		margin-top: 0;
+		opacity: 1;
+	}
+}
+
+figcaption{
+	height: 100%;
+}
+
+.content{
+	text-overflow: ellipsis;
+	white-space: wrap;
+	overflow-y: auto;
+	width: 100%;
+	height: 60%;
+}
+
+.card.movieCard figcaption h2{
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.loader{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.2);
+}
